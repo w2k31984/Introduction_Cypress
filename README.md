@@ -21,7 +21,7 @@ Proyecto para portafolio de pruebas de QA Automatizadas con Cypress.
 -Tener instalado nodeJS y npm como generador de Paquetes.
 -Conocimiento de Pruebas de software.
 -Tener instalado GIT en el ordenador.
--Tener instalado navegador (Chrome)
+-Tener instalado navegador (Chrome).
 
 
 
