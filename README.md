@@ -17,10 +17,11 @@ Proyecto para portafolio de pruebas de QA Automatizadas con Cypress.
 
 **Pre-requisitos** 📋
 
--Conocimientos de JavaScript.
+-Conocimientos basicos de JavaScript.
+-Tener instalado nodeJS y npm como generador de Paquetes.
 -Conocimiento de Pruebas de software.
 -Tener instalado GIT en el ordenador.
--Tener instalado navegador (Chrome u otro navegador para desplegar las pruebas)
+-Tener instalado navegador (Chrome)
 
 
 
