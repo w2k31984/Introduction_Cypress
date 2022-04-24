@@ -1,0 +1,61 @@
+Requisitos para instalar Cypress:
+1-Se debe tener instalado 
+   -nodeJs revisar version con node --version
+   -npm gestor de paquetes en nodeJS : npm --version
+2-Crear carpeta donde guardaremos nuestra codificacion
+3-Abrir nuestra carpeta de proyecto con VS Code y otro editor de texto
+4-Abrir una terminal en VS Code
+5-En la raiz de nuestro proyecto digitar la siguiente instruccion:  npm init -y
+  Esta instruccion crea l package.json en nuestro proyecto.
+6-Ahora dentro de nuestra misma carpeta de proyecto instalaremos cypress con la siguiente instruccion : npm install cypress@3
+7-Si al instalar cypress se instala con vulnerabilidades puede utilizarse el comando npm audit fix --force, para poder resolver dichas vulnerabilidades de la version instalada.
+8-En la carpeta donde tenemos nuestro proyecto vamos a inicializar cypress con la instruccion siguiente: npx cypress open
+9-Esto nos abrira el servidor de cypress.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Creando el primer test con cypress
+1-Vamos a la carpeta integration de nuestro proyecto
+2-Creamos un nuevo archivo llamado todomvc.spec.js
+3-Ahora abrimos cypress con la instruccion npx cypress open
+4-Nos vamos a la carpeta y el archivo creado en el cliente de cypress y damos click para poder correrlo.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Accesando elementos e interactuando con ellos.
+1-Vamos al archivo  todomvc.spec.js
+2-Abrimos el archivo cypress.json
+3-Dentro de los corchetes colocaremos las instrucciones correspondientes
+
+Documentacion disponible de cypress: https://www.cypress.io/
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Validaciones:
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Agrupando test con Mocha
+-Cuando colocamos la instruccion it.only estamos diciendo con mocha que queremos que esas lineas de test queremos que se corran en nuestro cypress.
+-Al colocar la instruccion it.only debemos recordar llamar el cy.visit y el cy.get siempre.
+-En la carpeta integration creamos un archivo nuevo 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Cypress.CLI
+Enfocado a CI/CD con Jenkins y la automatizacion continua de tareas 
+-Para poder correr cypress en el terminal debemos ejecutar la siguiente instruccion: npx cypress run
+-Para poder tener mas comandos de ayuda digitaremos la siguiente instruccion en consola : npx cypress run --help
+-Para correr solo uno de los test creados lo haremos con la siguiente instruccion: npx cypress run --spec cypress/integration/todomvc-actions.spec.js
+-Modificaremos nuestro package.json en la seccion de scripts, para que nos corra nuestro cypress con la instruccion npm run cypress,  agregando la linea : "cypress": "cypress open",  ---> solo los paquetes que estan en nuestro package.json pueden correr con npm los que no esten se realizaran con npx
+-Abriremos nuestro cypress con la instruccion en consola: npm run cypress
+-Modificaremos la instruccion test de nuestro package.json con la siguiente linea: "test": "cypress run"
+-Para correr todos nuestros test solo debemos colocar la instruccion en consola : npm test 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Page Objects in Cypress
+-En nuestro proyecto crearemos la carpeta "cypress" crearemos una nueva que se llamara: "page-objects"
+-Dentro de la carpeta crearemos el archivo: todo-page.js
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Visual Validation
+-Instalaremos en la carpeta de proyecto la herramienta de applitools/eyes con el comando: npm install @applitools/eyes-cypress@3
+-Luego ejecutaremos el comando: npx eyes-setup
+-En la carpeta integration crearemos un nuevo archivo de nombre: todomvc-visuals.spec.js
+-Debemos ir a la url: https://eyes.applitools.com/app/test-results/00000251751702357540/?accountId=KQd8DjzCcEKR5_aCQttVyw__
+-Luego nos vamos a la opcion my APIKey y copiamos el codigo de API
+-Vamos a la terminal y corremos la siguiente instruccion para exportar nuestros test en linux o mac: export APPLITOOLS_API_KEY=Q98Gk5MHTDrUM751GVZ27DW1105Z5uVDsDs99aKDNdi4lz8110
+-En Windows  corremos la instruccion: set APPLITOOLS_API_KEY=Q98Gk5MHTDrUM751GVZ27DW1105Z5uVDsDs99aKDNdi4lz8110
+-Luego corremos el comando npx cypress open 
+
+
